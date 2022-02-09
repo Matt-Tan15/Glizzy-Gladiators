@@ -5,7 +5,6 @@ const player = add([
 	pos(680, 560),     // pos() component gives it position, also enables movement
 	rotate(0),        // rotate() component gives it rotation
 	origin("center"), // origin() component defines the pivot point (defaults to "topleft")
-    solid()
 ])
 
 const SPEED = 320;
