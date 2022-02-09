@@ -1,9 +1,8 @@
 kaboom();
 
-add([
-    rect(12, 48),
+const block = add([
+    rect(17, 90),
     area(),
-    pos(120,550),
+    pos(-8,550),
     origin("center"),
-    solid()
 ])
