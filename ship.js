@@ -9,6 +9,9 @@ const player = add([
     solid()
 ])
 
+
+
+
 const SPEED = 320;
 
 onKeyDown("left", () => {
@@ -19,4 +22,6 @@ onKeyDown("left", () => {
 onKeyDown("right", () => {
 	player.move(SPEED, 0)
 })
+
+
 

@@ -23,8 +23,5 @@ let bgImage = loadSprite("background", "https://images-wixmp-ed30a86b8c4ca887773
     fixed()
   ]);
   // Scale the background to cover the screen
-  background.scaleTo(Math.max(
-    width() / bgImage.tex.width,
-    height() / bgImage.tex.height
-  ));
+
 
