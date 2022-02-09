@@ -1,4 +1,8 @@
-kaboom();
+kaboom({
+	background: [ 0, 0, 0 ]
+})
+
+
 
 add([
     rect(12, 48),
@@ -7,3 +11,4 @@ add([
     origin("center"),
     solid()
 ])
+

@@ -1,6 +1,5 @@
 loadBean();
 
-
 const player = add([
 	sprite("bean"),   // sprite() component makes it render as a sprite
 	pos(680, 560),     // pos() component gives it position, also enables movement
