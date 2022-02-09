@@ -6,6 +6,7 @@ const player = add([
 	rotate(0),        // rotate() component gives it rotation
 	origin("center"), // origin() component defines the pivot point (defaults to "topleft")
     area(),
+    solid()
 ])
 
 const SPEED = 320;
