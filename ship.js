@@ -19,3 +19,4 @@ onKeyDown("left", () => {
 onKeyDown("right", () => {
 	player.move(SPEED, 0)
 })
+
