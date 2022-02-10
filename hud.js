@@ -9,7 +9,7 @@ const score = add ([
     pos(1250,20),
     layer('ui'),
     {
-        valur: 0,
+        value: 0,
     }
 ])
 

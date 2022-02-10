@@ -62,4 +62,6 @@ onCollide("bullet", "enemy", (e) => {
   destroy(enemy);
   addKaboom(enemy.pos);
   shake(10);
+  score.value++;
+  score.text = score.value;
 })
