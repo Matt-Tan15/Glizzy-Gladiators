@@ -1,4 +1,4 @@
-loadSprite('hotdog', './sprites/HotDog.png')
+loadSprite('hotdog', './sprites/newCar.png')
 
 const player = add([
   sprite("hotdog"), // sprite() component makes it render as a sprite
