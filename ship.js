@@ -57,7 +57,8 @@ onKeyDown("space", () => {
   spawnRightBullet(player.pos.add(16, 0));
 });
 
-onCollide("bullet", "enemy", () => {
+onCollide("bullet", "enemy", (e) => {
+  destroy(e)
   addKaboom(enemy.pos);
   shake(10);
 })
