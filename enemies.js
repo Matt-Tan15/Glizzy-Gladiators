@@ -24,7 +24,7 @@ enemy.onStateEnter("attack", async () => {
 		const dir = player.pos.sub(enemy.pos).unit();
 
 		add([
-			pos(enemy.pos.add(50)),
+			pos(enemy.pos.add(50,90)),
 			move(DOWN, speed),
 			rect(12, 48),
 			area(),
