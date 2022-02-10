@@ -5,6 +5,7 @@ const enemy = add([
   pos(900, 40), // pos() component gives it position, also enables movement
   area(),
   solid(),
+  "enemy"
 ]);
 
 const speed = 480;

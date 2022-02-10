@@ -52,7 +52,12 @@ function spawnRightBullet(p) {
 
 const BULLET_SPEED = 1200;
 
-onKeyPress("space", () => {
+onKeyDown("space", () => {
   spawnLeftBullet(player.pos.sub(16, 0));
   spawnRightBullet(player.pos.add(16, 0));
 });
+
+onCollide("bullet", "enemy", () => {
+  addKaboom(enemy.pos);
+  shake(10);
+})
