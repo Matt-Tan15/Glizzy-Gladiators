@@ -1,4 +1,3 @@
-loadBean();
 loadSprite('hotdog', './sprites/HotDog.png')
 
 const player = add([
@@ -10,7 +9,7 @@ const player = add([
   solid(),
 ]);
 
-const SPEED = 320;
+const SPEED = 480;
 
 onKeyDown("left", () => {
   // .move() is provided by pos() component, move by pixels per second
