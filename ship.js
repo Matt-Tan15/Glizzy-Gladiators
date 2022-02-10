@@ -66,3 +66,4 @@ onCollide("bullet", "enemy", (e) => {
   score.text = score.value;
   cleanup()
 })
+

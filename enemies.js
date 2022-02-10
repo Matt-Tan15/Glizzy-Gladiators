@@ -53,3 +53,8 @@ enemy.onStateEnter("move", async () => {
 // })
 
 enemy.enterState("move");
+
+onCollide("ebullet", "player", (e) => {
+  lifeNumber.value--;
+  score.text = score.value;
+})
