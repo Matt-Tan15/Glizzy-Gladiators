@@ -5,16 +5,45 @@ const enemy = add([
   pos(900, 40), // pos() component gives it position, also enables movement
   area(),
   solid(),
+  state("idle", ["idle", "attack", "move"]),
   "enemy"
 ]);
 
-const speed = 480;
+const speed = 300;
 
-onKeyDown("a", () => {
-  // .move() is provided by pos() component, move by pixels per second
-  enemy.move(-speed, 0);
+enemy.onStateEnter("idle", async () => {
+	await wait(0.5);
+	enemy.enterState("attack");
 });
 
-onKeyDown("d", () => {
-  enemy.move(speed, 0);
+enemy.onStateEnter("attack", async () => {
+
+	// Don't do anything if player doesn't exist anymore
+	if (player.exists()) {
+
+		const dir = player.pos.sub(enemy.pos).unit();
+
+		add([
+			pos(enemy.pos),
+			move(DOWN, speed),
+			rect(12, 48),
+			area(),
+			cleanup(),
+			origin("center"),
+			color(BLUE),
+			"eBullet",
+		])
+
+	}
+
+	await wait(1);
+	enemy.enterState("move");
+
 });
+
+enemy.onStateEnter("move", async () => {
+	await wait(2);
+	enemy.enterState("idle");
+});
+
+enemy.enterState("move");
