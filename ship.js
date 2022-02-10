@@ -59,7 +59,7 @@ onKeyPress("space", () => {
 });
 
 onCollide("bullet", "enemy", (e) => {
-  destroy(e)
+  destroy(enemy);
   addKaboom(enemy.pos);
   shake(10);
 })
