@@ -7,7 +7,7 @@ const enemy = add([
   solid(),
 ]);
 
-const speed = 320;
+const speed = 480;
 
 onKeyDown("a", () => {
   // .move() is provided by pos() component, move by pixels per second
