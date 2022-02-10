@@ -8,7 +8,9 @@ const scoreHolder = add ([
 ])
 
 const score = add ([
-    text('0'),
+    text('0', {
+        size:40
+    }),
     pos(1250,20),
     layer('ui'),
     {
@@ -17,16 +19,20 @@ const score = add ([
 ])
 
 const livesHolder = add ([
-    text('lives:'),
+    text('lives:', {
+        size:40
+    }),
     pos(110,20),
     layer('ui'),
 ])
 
-loadSprite("heart", "./sprites/heart.png");
+loadSprite("heart", "./sprites/output.png");
 
 const lifeNumber = add([
-    text("3"), // sprite() component makes it render as a sprite
-    pos(450, 20), // pos() component gives it position, also enables movement
+    text("3", {
+        size:45
+    }), // sprite() component makes it render as a sprite
+    pos(310, 17), // pos() component gives it position, also enables movement
     layer('ui'),
     {
         value: 3,
@@ -35,7 +41,7 @@ const lifeNumber = add([
 
   const life = add([
     sprite("heart"), // sprite() component makes it render as a sprite
-    pos(400, 30 ), // pos() component gives it position, also enables movement
+    pos(255, 20 ), // pos() component gives it position, also enables movement
     area(),
     solid(),
     "heart"
