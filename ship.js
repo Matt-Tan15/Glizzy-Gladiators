@@ -50,9 +50,10 @@ function spawnRightBullet(p) {
   ])
 };
 
+let insaneMode = false;
 const BULLET_SPEED = 1200;
 
-onKeyDown("space", () => {
+onKeyPress("space", () => {
   spawnLeftBullet(player.pos.sub(16, 0));
   spawnRightBullet(player.pos.add(16, 0));
 });
