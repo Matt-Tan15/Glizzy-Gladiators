@@ -19,12 +19,12 @@ enemy.onStateEnter("idle", async () => {
 enemy.onStateEnter("attack", async () => {
 
 	// Don't do anything if player doesn't exist anymore
-	if (player.exists()) {
+	if (player.exists() && enemy.exists()) {
 
 		const dir = player.pos.sub(enemy.pos).unit();
 
 		add([
-			pos(enemy.pos),
+			pos(enemy.pos.add(50)),
 			move(DOWN, speed),
 			rect(12, 48),
 			area(),

@@ -60,8 +60,9 @@ onKeyPress("space", () => {
 
 onCollide("bullet", "enemy", (e) => {
   destroy(enemy);
-  addKaboom(enemy.pos);
+  addKaboom(enemy.pos.add(50));
   shake(10);
   score.value++;
   score.text = score.value;
+  cleanup()
 })
