@@ -3,17 +3,17 @@ kaboom({
 });
 
 const block = add([
-  rect(0, 90),
+  rect(0, 600),
   area(),
-  pos(285, 550),
+  pos(width() - 1370, height() - 470),
   origin("center"),
   solid(),
 ]);
 
 const block2 = add([
-  rect(0, 90),
+  rect(0, 600),
   area(),
-  pos(1080, 550),
+  pos(width() - 550, height() - 470),
   origin("center"),
   solid(),
 ]);
