@@ -21,13 +21,28 @@ onKeyDown("right", () => {
   player.move(SPEED, 0);
 });
 
-function spawnBullet(p) {
+function spawnLeftBullet(p) {
   add([
     rect(12, 48),
     area(),
     pos(p),
     origin("center"),
-    color(127, 127, 255),
+    color(255, 0, 0),
+    outline(4),
+    move(UP, BULLET_SPEED),
+    cleanup(),
+    // strings here means a tag
+    "bullet",
+  ])
+};
+
+function spawnRightBullet(p) {
+  add([
+    rect(12, 48),
+    area(),
+    pos(p),
+    origin("center"),
+    color(255, 255, 10),
     outline(4),
     move(UP, BULLET_SPEED),
     cleanup(),
@@ -39,6 +54,6 @@ function spawnBullet(p) {
 const BULLET_SPEED = 1200;
 
 onKeyPress("space", () => {
-  spawnBullet(player.pos.sub(16, 0))
-  spawnBullet(player.pos.add(16, 0))
+  spawnLeftBullet(player.pos.sub(16, 0));
+  spawnRightBullet(player.pos.add(16, 0));
 });

@@ -33,5 +33,3 @@ let background = add([
   // Keep the background position fixed even when the camera moves
   fixed(),
 ]);
-
-
