@@ -20,3 +20,25 @@ onKeyDown("left", () => {
 onKeyDown("right", () => {
   player.move(SPEED, 0);
 });
+
+function spawnBullet(p) {
+  add([
+    rect(12, 48),
+    area(),
+    pos(p),
+    origin("center"),
+    color(127, 127, 255),
+    outline(4),
+    move(UP, BULLET_SPEED),
+    cleanup(),
+    // strings here means a tag
+    "bullet",
+  ])
+};
+
+const BULLET_SPEED = 1200;
+
+onKeyPress("space", () => {
+  spawnBullet(player.pos.sub(16, 0))
+  spawnBullet(player.pos.add(16, 0))
+});
