@@ -28,6 +28,7 @@ enemy.onStateEnter("attack", async () => {
 			move(DOWN, speed),
 			rect(12, 48),
 			area(),
+      outline(4),
 			cleanup(),
 			origin("center"),
 			color(BLUE),
@@ -54,7 +55,9 @@ enemy.onStateEnter("move", async () => {
 
 enemy.enterState("move");
 
-onCollide("ebullet", "player", (e) => {
+onCollide("eBullet", "player", (e) => {
   lifeNumber.value--;
   score.text = score.value;
+  destroy(e);
+  cleanup();
 })

@@ -7,6 +7,7 @@ const player = add([
   origin("center"), // origin() component defines the pivot point (defaults to "topleft")
   area(),
   solid(),
+  "player",
 ]);
 
 const SPEED = 480;
