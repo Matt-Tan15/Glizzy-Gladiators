@@ -3,17 +3,17 @@ kaboom({
 });
 
 const block = add([
-  rect(0, 600),
+  rect(0, 900),
   area(),
-  pos(width() - 1370, height() - 470),
+  pos(width() - 1565, height() - 470),
   origin("center"),
   solid(),
 ]);
 
 const block2 = add([
-  rect(0, 600),
+  rect(0, 900),
   area(),
-  pos(width() - 550, height() - 470),
+  pos(width() - 350, height() - 470),
   origin("center"),
   solid(),
 ]);
@@ -29,7 +29,7 @@ let background = add([
   pos(width() / 2, height() / 2),
   origin("center"),
   // Allow the background to be scaled
-  scale(1),
+  scale(1.5),
   // Keep the background position fixed even when the camera moves
   fixed(),
 ]);
