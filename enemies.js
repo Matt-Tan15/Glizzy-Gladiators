@@ -46,4 +46,10 @@ enemy.onStateEnter("move", async () => {
 	enemy.enterState("idle");
 });
 
+// enemy.onStateUpdate("move", () => {
+// 	if (!player.exists()) return
+// 	const dir = player.pos.sub(enemy.pos).unit()
+// 	enemy.move(dir.scale(ENEMY_SPEED))
+// })
+
 enemy.enterState("move");
