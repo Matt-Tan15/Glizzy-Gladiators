@@ -57,7 +57,7 @@ enemy.enterState("move");
 
 onCollide("eBullet", "player", (e) => {
   lifeNumber.value--;
-  score.text = score.value;
+  lifeNumber.text = lifeNumber.value;
   destroy(e);
   cleanup();
 })
