@@ -8,15 +8,10 @@ const block = add([
   pos(0, 0),
   origin("topleft"),
   solid(),
+  "topleft",
 ]);
 
-const block2 = add([
-  rect(0, height()),
-  area(),
-  pos(width(), height()),
-  origin("center"),
-  solid(),
-]);
+
 
 const block3 = add([
   rect(1, height()),
@@ -24,6 +19,7 @@ const block3 = add([
   pos(width(), 0),
   origin("topright"),
   solid(),
+  "topright",
 ]);
 
 let bgImage = loadSprite(

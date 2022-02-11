@@ -9,6 +9,22 @@ const enemy = add([
   "enemy"
 ]);
 
+const ENEMY_SPEED = 100
+let CURRENT_SPEED = ENEMY_SPEED
+
+
+action('enemy', (s) => {
+	s.move(CURRENT_SPEED, 0)
+})
+
+onCollide('enemy', "topright", () => {
+	CURRENT_SPEED = -ENEMY_SPEED
+})
+
+onCollide('enemy', "topleft", () => {
+	CURRENT_SPEED = -ENEMY_SPEED
+})
+
 const speed = 300;
 
 enemy.onStateEnter("idle", async () => {
