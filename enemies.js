@@ -9,6 +9,22 @@ const enemy = add([
   "enemy",
 ]);
 
+// let counter = 0; 
+
+// while (counter !== 2) {
+//   loop(1, () => {
+//     add([
+//         sprite("face"),
+//         pos(rand(vec2(width(), 40))),
+//         area(),
+//         solid(),
+//         state("idle", ["idle", "attack", "move"]),
+//         "enemies",
+//     ])
+//   });
+//   counter++;
+// }
+
 const ENEMY_SPEED = 200;
 let CURRENT_SPEED = ENEMY_SPEED;
 
