@@ -31,7 +31,7 @@ let background = add([
   pos(width() / 2, height() / 2),
   origin("center"),
   // Allow the background to be scaled
-  scale(2),
+  scale(3),
   // Keep the background position fixed even when the camera moves
   fixed(),
 ]);
