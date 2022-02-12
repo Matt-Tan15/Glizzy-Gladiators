@@ -3,18 +3,18 @@ kaboom({
 });
 
 const block = add([
-  rect(0, height()),
+  rect(20, height()),
   area(),
-  pos(0, 0),
+  pos(width() / 6, 0),
   origin("topleft"),
   solid(),
   "topleft",
 ]);
 
 const block3 = add([
-  rect(1, height()),
+  rect(20, height()),
   area(),
-  pos(width(), 0),
+  pos(width() - 350, 0),
   origin("topright"),
   solid(),
   "topright",
