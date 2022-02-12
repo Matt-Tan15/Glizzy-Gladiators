@@ -1,4 +1,4 @@
-loadSprite('hotdog', './sprites/newCar.png')
+loadSprite("hotdog", "./sprites/newCar.png");
 
 const player = add([
   sprite("hotdog"), // sprite() component makes it render as a sprite
@@ -33,8 +33,8 @@ function spawnLeftBullet(p) {
     cleanup(),
     // strings here means a tag
     "bullet",
-  ])
-};
+  ]);
+}
 
 function spawnRightBullet(p) {
   add([
@@ -48,8 +48,8 @@ function spawnRightBullet(p) {
     cleanup(),
     // strings here means a tag
     "bullet",
-  ])
-};
+  ]);
+}
 
 let insaneMode = false;
 const BULLET_SPEED = 1200;
@@ -65,5 +65,5 @@ onCollide("bullet", "enemy", (e) => {
   shake(10);
   score.value++;
   score.text = score.value;
-  cleanup()
-})
+  cleanup();
+});

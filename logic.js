@@ -11,8 +11,6 @@ const block = add([
   "topleft",
 ]);
 
-
-
 const block3 = add([
   rect(1, height()),
   area(),
@@ -37,3 +35,10 @@ let background = add([
   // Keep the background position fixed even when the camera moves
   fixed(),
 ]);
+
+scene("lose", () => {
+  add([text("You Lose"), pos(12)]);
+
+  // // Press any key to go back
+  // onKeyPress(start)
+});
