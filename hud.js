@@ -2,7 +2,7 @@ const scoreHolder = add ([
     text('score:', {
         size:40
     }),
-    pos(width() - 200,20),
+    pos(width() - 130,20),
     origin("topright"),
     layer('ui'),
     
@@ -12,7 +12,7 @@ const score = add ([
     text('0', {
         size:40
     }),
-    pos(width() - 180,20),
+    pos(width() - 90,20),
     origin("topleft"),
     layer('ui'),
     {
@@ -24,7 +24,7 @@ const livesHolder = add ([
     text('lives:', {
         size:40
     }),
-    pos(110,20),
+    pos(width() / 35,20),
     layer('ui'),
 ])
 
@@ -34,7 +34,7 @@ const lifeNumber = add([
     text("3", {
         size:45
     }), // sprite() component makes it render as a sprite
-    pos(width(), 17), // pos() component gives it position, also enables movement
+    pos(width() / 7.7, 17), // pos() component gives it position, also enables movement
     layer('ui'),
     {
         value: 3,
@@ -43,7 +43,7 @@ const lifeNumber = add([
 
   const life = add([
     sprite("heart"), // sprite() component makes it render as a sprite
-    pos(255, 20 ), // pos() component gives it position, also enables movement
+    pos(width() / 9.5, 20 ), // pos() component gives it position, also enables movement
     area(),
     solid(),
     "heart"
