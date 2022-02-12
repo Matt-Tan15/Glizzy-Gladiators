@@ -37,8 +37,8 @@ let background = add([
 ]);
 
 scene("lose", () => {
-  add([text("You Lose"), pos(12)]);
-
+  add([text("You Lose"), pos(width() / 2, height() / 2)]);
+  origin("center");
   // // Press any key to go back
   // onKeyPress(start)
 });
