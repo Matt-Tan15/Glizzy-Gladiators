@@ -35,15 +35,12 @@ let background = add([
   // Allow the background to be scaled
   scale(1),
   // Keep the background position fixed even when the camera moves
-  fixed(),
+  // fixed(),
 ]);
 
-// onUpdate("road", (road) => {
-//   road.move(DOWN, 120)
-//   if (road.pos.x < 0) {
-//     destroy(road)
-// }
-// })
+onUpdate("background", (road) => {
+  background.move(DOWN, 120);
+})
 
 scene("lose", () => {
   add([text("You Lose"), pos(width() / 2, height() / 2)]);
