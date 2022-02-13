@@ -59,9 +59,10 @@ onKeyPress("space", () => {
   spawnRightBullet(player.pos.add(16, 0));
 });
 
-onCollide("bullet", "enemy", (e) => {
-  destroy(enemy);
-  addKaboom(enemy.pos.add(50));
+onCollide("bullet", "enemy", (b, e) => {
+  destroy(e);
+  addKaboom(e.pos.add(50));
+  destroy(b)
   shake(10);
   score.value++;
   score.text = score.value;

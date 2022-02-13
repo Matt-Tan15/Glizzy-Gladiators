@@ -12,7 +12,7 @@ const score = add ([
     text('0', {
         size:40
     }),
-    pos(width() - 90,20),
+    pos(width() - 120,20),
     origin("topleft"),
     layer('ui'),
     {

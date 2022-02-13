@@ -1,29 +1,30 @@
 loadSprite("face", "./sprites/face.png");
 
-const enemy = add([
-  sprite("face"), // sprite() component makes it render as a sprite
-  pos(900, 40), // pos() component gives it position, also enables movement
-  area(),
-  solid(),
-  state("idle", ["idle", "attack", "move"]),
-  "enemy",
-]);
+// const enemy = add([
+//   sprite("face"), // sprite() component makes it render as a sprite
+//   pos(900, 40), // pos() component gives it position, also enables movement
+//   area(),
+//   solid(),
+//   state("idle", ["idle", "attack", "move"]),
+//   "enemy",
+// ]);
+let enemy;
 
-// let counter = 0; 
+for (let i = 0; i < 5; i++) {
 
-// while (counter !== 2) {
-//   loop(1, () => {
-//     add([
-//         sprite("face"),
-//         pos(rand(vec2(width(), 40))),
-//         area(),
-//         solid(),
-//         state("idle", ["idle", "attack", "move"]),
-//         "enemies",
-//     ])
-//   });
-//   counter++;
-// }
+  const x = rand(0, width());
+  // const y = rand(0, 40);
+        enemy = add([
+        sprite("face"),
+        pos(x, 40),
+        area(),
+        solid(),
+        state("idle", ["idle", "attack", "move"]),
+        "enemy",
+    ])
+}
+  
+
 
 const ENEMY_SPEED = 200;
 let CURRENT_SPEED = ENEMY_SPEED;
@@ -50,7 +51,7 @@ enemy.onStateEnter("idle", async () => {
 enemy.onStateEnter("attack", async () => {
   // Don't do anything if player doesn't exist anymore
   if (player.exists() && enemy.exists()) {
-    const dir = player.pos.sub(enemy.pos).unit();
+    // const dir = player.pos.sub(enemy.pos).unit();
 
     add([
       pos(enemy.pos.add(50, 90)),
