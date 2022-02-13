@@ -20,10 +20,10 @@ const block3 = add([
   "topright",
 ]);
 
-let bgImage = loadSprite(
-  "background",
-  "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/54ff7af5-2e49-471e-8efc-69c98615ab82/d128hmk-5d073adb-0821-44d1-a2bf-1e936f5b16b1.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzU0ZmY3YWY1LTJlNDktNDcxZS04ZWZjLTY5Yzk4NjE1YWI4MlwvZDEyOGhtay01ZDA3M2FkYi0wODIxLTQ0ZDEtYTJiZi0xZTkzNmY1YjE2YjEuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.rrEKAOowLqMQiuUOrbKG4fWCAfn71GhnUWUirLQzy-o"
-);
+// let bgImage = loadSprite(
+//   "background",
+//   "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/54ff7af5-2e49-471e-8efc-69c98615ab82/d128hmk-5d073adb-0821-44d1-a2bf-1e936f5b16b1.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzU0ZmY3YWY1LTJlNDktNDcxZS04ZWZjLTY5Yzk4NjE1YWI4MlwvZDEyOGhtay01ZDA3M2FkYi0wODIxLTQ0ZDEtYTJiZi0xZTkzNmY1YjE2YjEuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.rrEKAOowLqMQiuUOrbKG4fWCAfn71GhnUWUirLQzy-o"
+// );
 
 const road = loadSprite("road", "./sprites/road.png");
 
@@ -37,6 +37,13 @@ let background = add([
   // Keep the background position fixed even when the camera moves
   fixed(),
 ]);
+
+// onUpdate("road", (road) => {
+//   road.move(DOWN, 120)
+//   if (road.pos.x < 0) {
+//     destroy(road)
+// }
+// })
 
 scene("lose", () => {
   add([text("You Lose"), pos(width() / 2, height() / 2)]);
