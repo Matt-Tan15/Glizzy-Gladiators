@@ -12,45 +12,45 @@ let bg1 = add([
   sprite("newRoad"),
   pos(width() / 2, height()),
   origin("center"),
-  scale(1.75),
+  scale(1.25),
   fixed(),
 ]);
 
 let bg2 = add([
   sprite("newRoad"),
-  pos(width() / 2, height() / 2),
+  pos(width() / 2, height() / 3),
   origin("center"),
-  scale(1.75),
+  scale(1.25),
   fixed(),
 ]);
 
 const block = add([
-  rect(20, height()),
+  rect(0, height()),
   area(),
-  pos(width() / 6, 0),
+  pos(width() / 4.3, 0),
   origin("topleft"),
   solid(),
   "topleft",
 ]);
 
 const block2 = add([
-  rect(20, height()),
+  rect(0, height()),
   area(),
-  pos(width() / 1.2, 0),
+  pos(width() / 1.32, 0),
   origin("topright"),
   solid(),
   "topright",
 ]);
 
 bg1.onUpdate(() => {
-  bg1.move(0, 2500)
+  bg1.move(0, 4000)
   if (bg1.pos.y > END_POS) {
       bg1.pos.y = START_POS;
   }
 })
 
 bg2.onUpdate(() => {
-  bg2.move(0, 2500)
+  bg2.move(0, 4000)
   if (bg2.pos.y > END_POS) {
       bg2.pos.y = START_POS;
   }
@@ -104,7 +104,7 @@ addLevel(
   [
     "                                     ",
     "                                     ",
-    "          e          e               ",
+    "                  e          e       ",
     "                                     ",
     "                                     ",
     "                                     ",
