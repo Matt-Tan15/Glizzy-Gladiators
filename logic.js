@@ -10,7 +10,7 @@ const BGSPEED = 500;
 
 let bg1 = add([
   sprite("newRoad", {
-    width : width() * .68,
+    width : width() * .675,
   }),
   pos(width() / 2, height()),
   origin("center"),
@@ -20,7 +20,7 @@ let bg1 = add([
 
 let bg2 = add([
   sprite("newRoad", {
-    width : width() * .68,
+    width : width() * .675,
   }),
   pos(width() / 2, height() / 3),
   origin("center"),
@@ -29,16 +29,16 @@ let bg2 = add([
 ]);
 
 const block = add([
-  rect(0, height()),
+  rect(20, height()),
   area(),
-  pos(width() / 6.3, height() / 2),
+  pos(width() / 6.8, height() / 2),
   origin("center"),
   solid(),
   "topleft",
 ]);
 
 const block2 = add([
-  rect(0, height()),
+  rect(20, height()),
   area(),
   pos(width() / 1.2, height() / 2),
   origin("center"),
@@ -106,13 +106,13 @@ add([
 
 addLevel(
   [
-    "      l                        l       ",
-    "      l                        l       ",
-    "      l       e     e          l       ",
-    "      l                        l       ",
-    "      l                        l       ",
-    "      l                        l       ",
-    "      l                        l       ",
+    "                                   ",
+    "                                   ",
+    "                e          e       ",
+    "                                   ",
+    "                                   ",
+    "                                   ",
+    "                                   ",
   ],
   {
     width: 40,
@@ -133,3 +133,20 @@ scene("lose", () => {
   // // Press any key to go back
   // onKeyPress(start)
 });
+
+scene("win", () => {
+  add([text("You Win"), pos(width() / 2, height() / 2)]);
+  origin("center");
+  // onKeyPress(start)
+})
+
+// function start() {
+// 	// Start with the "game" scene, with initial parameters
+//   add([text("You Win"), pos(width() / 2, height() / 2)]);
+//   origin("center");
+// 	go("game", {
+// 		score: 0,
+// 	})
+// }
+
+// start()

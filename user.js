@@ -64,4 +64,8 @@ onCollide("bullet", "enemy", (b, e) => {
   score.value++;
   score.text = score.value;
   cleanup();
+  if (score.value === 3) {
+    destroy("enemy");
+    go("win");
+  }
 });
