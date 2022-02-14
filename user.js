@@ -1,10 +1,10 @@
 loadSprite("hotdog", "./sprites/newCar.png");
 
 const player = add([
-  sprite("hotdog"), // sprite() component makes it render as a sprite
-  pos(width() / 2, height() - 100), // pos() component gives it position, also enables movement
-  rotate(0), // rotate() component gives it rotation
-  origin("center"), // origin() component defines the pivot point (defaults to "topleft")
+  sprite("hotdog"), 
+  pos(width() / 2, height() - 100), 
+  rotate(0), 
+  origin("center"),
   area(),
   solid(),
   "player",
@@ -13,7 +13,6 @@ const player = add([
 const SPEED = 480;
 
 onKeyDown("left", () => {
-  // .move() is provided by pos() component, move by pixels per second
   player.move(-SPEED, 0);
 });
 
@@ -31,7 +30,6 @@ function spawnLeftBullet(p) {
     outline(4),
     move(UP, BULLET_SPEED),
     cleanup(),
-    // strings here means a tag
     "bullet",
   ]);
 }
@@ -46,7 +44,6 @@ function spawnRightBullet(p) {
     outline(4),
     move(UP, BULLET_SPEED),
     cleanup(),
-    // strings here means a tag
     "bullet",
   ]);
 }

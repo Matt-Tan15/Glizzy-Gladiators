@@ -33,7 +33,7 @@ let bg1 = add([
   pos(width() / 2, START_POS),
   origin("center"),
   scale(1.75),
-  // fixed(),
+  fixed(),
 ]);
 
 let bg2 = add([
@@ -41,7 +41,7 @@ let bg2 = add([
   pos(width() / 2, height() / 2),
   origin("center"),
   scale(1.75),
-  // fixed(),
+  fixed(),
 ]);
 
 bg1.onUpdate(() => {
