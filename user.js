@@ -10,7 +10,7 @@ const player = add([
   "player",
 ]);
 
-const SPEED = 480;
+const SPEED = 500;
 
 onKeyDown("left", () => {
   player.move(-SPEED, 0);
