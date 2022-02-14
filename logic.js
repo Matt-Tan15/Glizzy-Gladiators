@@ -106,17 +106,17 @@ add([
 
 addLevel(
   [
-    "                                   ",
-    "                                   ",
-    "           e            e          ",
-    "                                   ",
-    "                e                  ",
-    "                                   ",
-    "                                   ",
+    "         l                       ",
+    "         l                       ",
+    "         le     e         e      e",
+    "         le          e           e",
+    "         le     e         e      e",
+    "         l                       ",
+    "         l                       ",
   ],
   {
-    width: 30,
-    height: 22,
+    width: 40,
+    height: 30,
     e: () => [
       sprite("face"),
       area(),
