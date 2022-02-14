@@ -11,19 +11,19 @@ loadSprite("face", "./sprites/face.png");
 
 const ENEMY_SPEED = 200;
 
-// action("enemy", (s) => {
-//   s.move(ENEMY_SPEED, 0);
-// });
+action("enemy", (s) => {
+  s.move(ENEMY_SPEED, 0);
+});
 
 // onCollide("enemy", "topright", () => {
 //   action("enemy", (s) => {
-//     s.move(-ENEMY_SPEED, 0);
+//     s.move(-ENEMY_SPEED - 50, 0);
 //   });
 // });
 
 // onCollide("enemy", "topleft", () => {
 //   action("enemy", (s) => {
-//     s.move(ENEMY_SPEED, 0);
+//     s.move(ENEMY_SPEED - 50, 0);
 //   });
 // });
 

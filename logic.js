@@ -20,37 +20,39 @@ const block2 = add([
   "topright",
 ]);
 
-const road = loadSprite("road", "./sprites/road.png");
+// const road = loadSprite("road", "./sprites/road.png");
+// const road2 = loadSprite("road2", "./sprites/road2.png");
+const newRoad = loadSprite("newRoad", "./sprites/newRoad.png");
 
 const START_POS = -200;
 const END_POS = height();
 const BGSPEED = 500;
 
 let bg1 = add([
-  sprite("road"),
+  sprite("newRoad"),
   pos(width() / 2, START_POS),
   origin("center"),
-  scale(1),
+  scale(1.75),
   // fixed(),
 ]);
 
 let bg2 = add([
-  sprite("road"),
+  sprite("newRoad"),
   pos(width() / 2, height() / 2),
   origin("center"),
-  scale(1),
+  scale(1.75),
   // fixed(),
 ]);
 
 bg1.onUpdate(() => {
-  bg1.move(0, 800)
+  bg1.move(0, 1000)
   if (bg1.pos.y > END_POS) {
       bg1.pos.y = START_POS;
   }
 })
 
 bg2.onUpdate(() => {
-  bg2.move(0, 800)
+  bg2.move(0, 1000)
   if (bg2.pos.y > END_POS) {
       bg2.pos.y = START_POS;
   }
