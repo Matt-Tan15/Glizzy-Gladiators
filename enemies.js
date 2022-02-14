@@ -11,10 +11,17 @@ loadSprite("face", "./sprites/face.png");
 
 const ENEMY_SPEED = 200;
 
-
-action("enemy", (s) => {
-  s.move(ENEMY_SPEED, 0);
-});
+for (let i = 0; i < 10; i++) {
+  if (i % 2 === 0) {
+    action("enemy", (s) => {
+      s.move(ENEMY_SPEED, 0);
+    });
+  } else {
+    action("enemy", (s) => {
+      s.move(-ENEMY_SPEED, 0);
+    });
+  }
+}
 
 // action("enemy", (e) => {
 //   e = add([
@@ -31,7 +38,7 @@ action("enemy", (s) => {
 
 // onCollide("enemy", "topright", () => {
 //   action("enemy", (s) => {
-//     s.move(-ENEMY_SPEED - 50, 0);
+//     s.move(-ENEMY_SPEED, 0);
 //   });
 // });
 
@@ -43,14 +50,14 @@ action("enemy", (s) => {
 
 const speed = 300;
 
-// enemy.onStateEnter("idle", () => {
-//   wait(0.5 , () => {
+// enemy.onStateEnter("idle", async() => {
+//   await wait(1 , () => {
 //     enemy.enterState("attack");
 //   })
 //   // enemy.enterState("attack");
 // });
 
-// enemy.onStateEnter("attack", () => {
+// enemy.onStateEnter("attack", async() => {
 //   // Don't do anything if player doesn't exist anymore
 //   if (player.exists() && enemy.exists()) {
 //     // const dir = player.pos.sub(enemy.pos).unit();
@@ -60,7 +67,7 @@ const speed = 300;
 //       move(DOWN, speed),
 //       rect(12, 48),
 //       area(),
-//       outline(4),
+//       // outline(4),
 //       cleanup(),
 //       origin("center"),
 //       color(BLUE),
@@ -68,23 +75,23 @@ const speed = 300;
 //     ]);
 //   }
 
-//   wait(1, () => {
+//   await wait(1, () => {
 //     enemy.enterState("move");
 //   });
 //   // enemy.enterState("move");
 // });
 
 // enemy.onStateEnter("move", async () => {
-//   wait(2, () => {
+//   await wait(2, () => {
 //     enemy.enterState("idle");
 //   });
-  // enemy.enterState("idle");
+//   enemy.enterState("idle");
 // });
 
 // enemy.onStateUpdate("move", () => {
 // 	if (!player.exists()) return
 // 	const dir = player.pos.sub(enemy.pos).unit()
-// 	enemy.move(dir.scale(ENEMY_SPEED))
+// 	enemy.move(rand(0) , 0)
 // })
 
 // enemy.enterState("move");
