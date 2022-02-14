@@ -102,16 +102,16 @@ add([
 
 addLevel(
   [
-    "                                       ",
-    "                                       ",
-    "          e     e           e          ",
-    "                                       ",
-    "                                       ",
-    "                                       ",
-    "                                       ",
+    "                                     ",
+    "                                     ",
+    "          e       e        e         ",
+    "                                     ",
+    "                                     ",
+    "                                     ",
+    "                                     ",
   ],
   {
-    width: 50,
+    width: 32,
     height: 32,
     // define what each symbol means, by a function returning a component list (what will be passed to add())
     e: () => [
