@@ -115,8 +115,8 @@ addLevel(
     "                                   ",
   ],
   {
-    width: 40,
-    height: 50,
+    width: 30,
+    height: 22,
     e: () => [
       sprite("face"),
       area(),

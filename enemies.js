@@ -17,34 +17,38 @@ action("enemy", (s) => {
   s.move(CURRENT_SPEED, 0);
 });
 
-collides("enemy", "topleft", (e) => {
+collides("enemy", "topleft", () => {
   CURRENT_SPEED = ENEMY_SPEED;
-  add([
-    pos(e.pos.add(50, 80)),
-    move(DOWN, speed),
-    rect(12, 48),
-    area(),
-    outline(4),
-    cleanup(),
-    origin("center"),
-    color(GREEN),
-    "eBullet",
-  ]);
+  every("enemy", (e) => {
+    add([
+      pos(e.pos.add(50, 80)),
+      move(DOWN, speed),
+      rect(12, 48),
+      area(),
+      outline(4),
+      cleanup(),
+      origin("center"),
+      color(GREEN),
+      "eBullet",
+    ]);
+  });
 });
 
 collides("enemy", "topright", (e) => {
   CURRENT_SPEED = -ENEMY_SPEED;
-  add([
-    pos(e.pos.add(50, 80)),
-    move(DOWN, speed),
-    rect(12, 48),
-    area(),
-    outline(4),
-    cleanup(),
-    origin("center"),
-    color(GREEN),
-    "eBullet",
-  ]);
+  every("enemy", (e) => {
+    add([
+      pos(e.pos.add(50, 80)),
+      move(DOWN, speed),
+      rect(12, 48),
+      area(),
+      outline(4),
+      cleanup(),
+      origin("center"),
+      color(GREEN),
+      "eBullet",
+    ]);
+  });
 });
 
 // action("enemy", (e) => {
@@ -59,7 +63,6 @@ collides("enemy", "topright", (e) => {
 //       "eBullet",
 //   ])
 // });
-
 
 // enemy.onStateEnter("idle", async () => {
 //   await wait(1);
