@@ -9,18 +9,22 @@ const END_POS = height();
 const BGSPEED = 500;
 
 let bg1 = add([
-  sprite("newRoad"),
+  sprite("newRoad", {
+    width : width() * .675,
+  }),
   pos(width() / 2, height()),
   origin("center"),
-  scale(1.75),
+  scale(1),
   fixed(),
 ]);
 
 let bg2 = add([
-  sprite("newRoad"),
+  sprite("newRoad", {
+    width : width() * .675,
+  }),
   pos(width() / 2, height() / 3),
   origin("center"),
-  scale(1.75),
+  scale(1),
   fixed(),
 ]);
 
