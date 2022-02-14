@@ -29,7 +29,7 @@ let bg2 = add([
 ]);
 
 const block = add([
-  rect(20, height()),
+  rect(0, height()),
   area(),
   pos(width() / 6.3, height() / 2),
   origin("center"),
@@ -38,7 +38,7 @@ const block = add([
 ]);
 
 const block2 = add([
-  rect(20, height()),
+  rect(0, height()),
   area(),
   pos(width() / 1.2, height() / 2),
   origin("center"),
@@ -106,13 +106,13 @@ add([
 
 addLevel(
   [
-    "                                     ",
-    "                                     ",
-    "                  e          e       ",
-    "                                     ",
-    "                                     ",
-    "                                     ",
-    "                                     ",
+    "      l                        l       ",
+    "      l                        l       ",
+    "      l       e     e          l       ",
+    "      l                        l       ",
+    "      l                        l       ",
+    "      l                        l       ",
+    "      l                        l       ",
   ],
   {
     width: 40,
