@@ -8,72 +8,64 @@ loadSprite("face", "./sprites/face.png");
 //   state("idle", ["idle", "attack", "move"]),
 //   "enemy",
 // ]);
-let enemy;
-
-for (let i = 0; i < 5; i++) {
-
-  const x = rand(0, width());
-  // const y = rand(0, 40);
-        enemy = add([
-        sprite("face"),
-        pos(x, 40),
-        area(),
-        solid(),
-        state("idle", ["idle", "attack", "move"]),
-        "enemy",
-    ])
-}
-  
-
 
 const ENEMY_SPEED = 200;
-let CURRENT_SPEED = ENEMY_SPEED;
 
-action("enemy", (s) => {
-  s.move(CURRENT_SPEED, 0);
-});
+// action("enemy", (s) => {
+//   s.move(ENEMY_SPEED, 0);
+// });
 
-onCollide("enemy", "topright", () => {
-  CURRENT_SPEED = -ENEMY_SPEED;
-});
+// onCollide("enemy", "topright", () => {
+//   action("enemy", (s) => {
+//     s.move(-ENEMY_SPEED, 0);
+//   });
+// });
 
-onCollide("enemy", "topleft", () => {
-  CURRENT_SPEED = -ENEMY_SPEED;
-});
+// onCollide("enemy", "topleft", () => {
+//   action("enemy", (s) => {
+//     s.move(ENEMY_SPEED, 0);
+//   });
+// });
 
 const speed = 300;
 
-enemy.onStateEnter("idle", async () => {
-  await wait(0.5);
-  enemy.enterState("attack");
-});
+// enemy.onStateEnter("idle", () => {
+//   wait(0.5 , () => {
+//     enemy.enterState("attack");
+//   })
+//   // enemy.enterState("attack");
+// });
 
-enemy.onStateEnter("attack", async () => {
-  // Don't do anything if player doesn't exist anymore
-  if (player.exists() && enemy.exists()) {
-    // const dir = player.pos.sub(enemy.pos).unit();
+// enemy.onStateEnter("attack", () => {
+//   // Don't do anything if player doesn't exist anymore
+//   if (player.exists() && enemy.exists()) {
+//     // const dir = player.pos.sub(enemy.pos).unit();
 
-    add([
-      pos(enemy.pos.add(50, 90)),
-      move(DOWN, speed),
-      rect(12, 48),
-      area(),
-      outline(4),
-      cleanup(),
-      origin("center"),
-      color(BLUE),
-      "eBullet",
-    ]);
-  }
+//     add([
+//       pos(enemy.pos.add(50, 90)),
+//       move(DOWN, speed),
+//       rect(12, 48),
+//       area(),
+//       outline(4),
+//       cleanup(),
+//       origin("center"),
+//       color(BLUE),
+//       "eBullet",
+//     ]);
+//   }
 
-  await wait(1);
-  enemy.enterState("move");
-});
+//   wait(1, () => {
+//     enemy.enterState("move");
+//   });
+//   // enemy.enterState("move");
+// });
 
-enemy.onStateEnter("move", async () => {
-  await wait(2);
-  enemy.enterState("idle");
-});
+// enemy.onStateEnter("move", async () => {
+//   wait(2, () => {
+//     enemy.enterState("idle");
+//   });
+  // enemy.enterState("idle");
+// });
 
 // enemy.onStateUpdate("move", () => {
 // 	if (!player.exists()) return
@@ -81,7 +73,7 @@ enemy.onStateEnter("move", async () => {
 // 	enemy.move(dir.scale(ENEMY_SPEED))
 // })
 
-enemy.enterState("move");
+// enemy.enterState("move");
 
 onCollide("eBullet", "player", (e) => {
   lifeNumber.value--;
