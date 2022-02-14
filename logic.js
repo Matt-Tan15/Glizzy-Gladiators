@@ -104,16 +104,15 @@ addLevel(
   [
     "                                     ",
     "                                     ",
-    "          e       e        e         ",
+    "          e          e               ",
     "                                     ",
     "                                     ",
     "                                     ",
     "                                     ",
   ],
   {
-    width: 32,
+    width: 40,
     height: 32,
-    // define what each symbol means, by a function returning a component list (what will be passed to add())
     e: () => [
       sprite("face"),
       area(),
@@ -123,25 +122,6 @@ addLevel(
     ],
   }
 );
-
-// enemy.onStateEnter("attack", () => {
-//   // Don't do anything if player doesn't exist anymore
-//   if (player.exists() && enemy.exists()) {
-//     // const dir = player.pos.sub(enemy.pos).unit();
-
-//     add([
-//       pos(enemy.pos.add(50, 90)),
-//       move(DOWN, speed),
-//       rect(12, 48),
-//       area(),
-//       outline(4),
-//       cleanup(),
-//       origin("center"),
-//       color(BLUE),
-//       "eBullet",
-//     ]);
-//   }
-// })
 
 scene("lose", () => {
   add([text("You Lose"), pos(width() / 2, height() / 2)]);
