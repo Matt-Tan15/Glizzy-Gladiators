@@ -2,24 +2,6 @@ kaboom({
   background: [0, 0, 0],
 });
 
-const block = add([
-  rect(20, height()),
-  area(),
-  pos(width() / 6, 0),
-  origin("topleft"),
-  solid(),
-  "topleft",
-]);
-
-const block2 = add([
-  rect(20, height()),
-  area(),
-  pos(width() - 350, 0),
-  origin("topright"),
-  solid(),
-  "topright",
-]);
-
 const newRoad = loadSprite("newRoad", "./sprites/newRoad.png");
 
 const START_POS = -200;
@@ -40,6 +22,24 @@ let bg2 = add([
   origin("center"),
   scale(1.75),
   fixed(),
+]);
+
+const block = add([
+  rect(20, height()),
+  area(),
+  pos(width() / 6, 0),
+  origin("topleft"),
+  solid(),
+  "topleft",
+]);
+
+const block2 = add([
+  rect(20, height()),
+  area(),
+  pos(width() / 1.2, 0),
+  origin("topright"),
+  solid(),
+  "topright",
 ]);
 
 bg1.onUpdate(() => {
