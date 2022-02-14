@@ -36,7 +36,7 @@ const block = add([
 const block2 = add([
   rect(0, height()),
   area(),
-  pos(width() / 1.32, 0),
+  pos(bg2.width + 1450, 0),
   origin("topright"),
   solid(),
   "topright",
