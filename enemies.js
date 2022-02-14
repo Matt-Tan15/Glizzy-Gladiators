@@ -11,21 +11,9 @@ loadSprite("face", "./sprites/face.png");
 
 const ENEMY_SPEED = 200;
 
-for (let i = 0; i < 10; i++) {
-  if (i % 2 === 0) {
-    action("enemy", (s) => {
-      s.move(ENEMY_SPEED, 0);
-    });
-  } else {
-    action("enemy", (s) => {
-      s.move(-ENEMY_SPEED, 0);
-    });
-  }
-}
-
 // action("enemy", (e) => {
 //   e = add([
-//       pos(e.pos),
+//       pos(e.pos.add(50, 80)),
 //       move(DOWN, BULLET_SPEED),
 //       rect(12, 12),
 //       area(),
@@ -35,6 +23,11 @@ for (let i = 0; i < 10; i++) {
 //       "eBullet",
 //   ])
 // });
+
+
+// action("enemy", (s) => {
+//       s.move(-ENEMY_SPEED, 0);
+//     });
 
 // onCollide("enemy", "topright", () => {
 //   action("enemy", (s) => {

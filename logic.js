@@ -43,14 +43,14 @@ let bg2 = add([
 ]);
 
 bg1.onUpdate(() => {
-  bg1.move(0, 1000)
+  bg1.move(0, 2500)
   if (bg1.pos.y > END_POS) {
       bg1.pos.y = START_POS;
   }
 })
 
 bg2.onUpdate(() => {
-  bg2.move(0, 1000)
+  bg2.move(0, 2500)
   if (bg2.pos.y > END_POS) {
       bg2.pos.y = START_POS;
   }
