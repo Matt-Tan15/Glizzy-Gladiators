@@ -20,8 +20,6 @@ const block2 = add([
   "topright",
 ]);
 
-// const road = loadSprite("road", "./sprites/road.png");
-// const road2 = loadSprite("road2", "./sprites/road2.png");
 const newRoad = loadSprite("newRoad", "./sprites/newRoad.png");
 
 const START_POS = -200;
@@ -30,7 +28,7 @@ const BGSPEED = 500;
 
 let bg1 = add([
   sprite("newRoad"),
-  pos(width() / 2, START_POS),
+  pos(width() / 2, height()),
   origin("center"),
   scale(1.75),
   fixed(),
