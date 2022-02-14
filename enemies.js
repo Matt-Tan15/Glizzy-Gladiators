@@ -26,7 +26,6 @@ collides("enemy", 'topright', () => {
   CURRENT_SPEED = -ENEMY_SPEED;
 });
 
-
 // action("enemy", (e) => {
 //   e = add([
 //       pos(e.pos.add(50, 80)),
@@ -39,13 +38,6 @@ collides("enemy", 'topright', () => {
 //       "eBullet",
 //   ])
 // });
-
-onCollide("enemy", "topleft", (e) => {
-  // action("enemy", (s) => {
-  //   s.move(ENEMY_SPEED, 0);
-  // });
-  e.move(ENEMY_SPEED, 0);
-});
 
 const speed = 300;
 
