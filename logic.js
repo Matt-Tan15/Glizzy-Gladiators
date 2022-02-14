@@ -108,9 +108,9 @@ addLevel(
   [
     "         l                       ",
     "         l                       ",
-    "         l   e e         e e      ",
-    "         l          e            ",
-    "         l   e e         e e      ",
+    "         l    e         e         ",
+    "         l e       e        e     ",
+    "         l    e         e         ",
     "         l                       ",
     "         l                       ",
   ],
