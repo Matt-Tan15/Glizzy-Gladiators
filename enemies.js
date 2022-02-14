@@ -11,9 +11,23 @@ loadSprite("face", "./sprites/face.png");
 
 const ENEMY_SPEED = 200;
 
+
 action("enemy", (s) => {
   s.move(ENEMY_SPEED, 0);
 });
+
+// action("enemy", (e) => {
+//   e = add([
+//       pos(e.pos),
+//       move(DOWN, BULLET_SPEED),
+//       rect(12, 12),
+//       area(),
+//       cleanup(),
+//       origin("center"),
+//       color(BLUE),
+//       "eBullet",
+//   ])
+// });
 
 // onCollide("enemy", "topright", () => {
 //   action("enemy", (s) => {
