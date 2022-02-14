@@ -10,7 +10,7 @@ const BGSPEED = 500;
 
 let bg1 = add([
   sprite("newRoad", {
-    width : width() * .675,
+    width : width() * .68,
   }),
   pos(width() / 2, height()),
   origin("center"),
@@ -20,7 +20,7 @@ let bg1 = add([
 
 let bg2 = add([
   sprite("newRoad", {
-    width : width() * .675,
+    width : width() * .68,
   }),
   pos(width() / 2, height() / 3),
   origin("center"),
@@ -31,7 +31,7 @@ let bg2 = add([
 const block = add([
   rect(20, height()),
   area(),
-  pos(width() / 6.8, height() / 2),
+  pos(width() / 6.3, height() / 2),
   origin("center"),
   solid(),
   "topleft",
