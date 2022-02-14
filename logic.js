@@ -108,9 +108,9 @@ addLevel(
   [
     "         l                       ",
     "         l                       ",
-    "         le     e         e      e",
-    "         le          e           e",
-    "         le     e         e      e",
+    "         l     e         e       ",
+    "         l          e            ",
+    "         l     e         e       ",
     "         l                       ",
     "         l                       ",
   ],
@@ -118,7 +118,7 @@ addLevel(
     width: 40,
     height: 30,
     e: () => [
-      sprite("face"),
+      sprite("mushroom"),
       area(),
       solid(),
       state("idle", ["idle", "attack", "move"]),
