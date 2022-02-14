@@ -118,7 +118,7 @@ addLevel(
     width: 40,
     height: 30,
     e: () => [
-      sprite("mushroom"),
+      sprite("chomp"),
       area(),
       solid(),
       state("idle", ["idle", "attack", "move"]),

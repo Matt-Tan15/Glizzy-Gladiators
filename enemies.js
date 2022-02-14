@@ -1,4 +1,4 @@
-loadSprite("mushroom", "./sprites/face.png");
+loadSprite("chomp", "./sprites/chomp.png");
 
 const ENEMY_SPEED = 300;
 let CURRENT_SPEED = ENEMY_SPEED;
@@ -19,7 +19,7 @@ collides("enemy", "topleft", () => {
       outline(4),
       cleanup(),
       origin("center"),
-      color(GREEN),
+      color(112, 59, 237),
       "eBullet",
     ]);
   });
@@ -36,7 +36,7 @@ collides("enemy", "topright", (e) => {
       outline(4),
       cleanup(),
       origin("center"),
-      color(GREEN),
+      color(112, 59, 237),
       "eBullet",
     ]);
   });
