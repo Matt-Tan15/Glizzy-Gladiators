@@ -121,7 +121,6 @@ addLevel(
       sprite("chomp"),
       area(),
       solid(),
-      state("idle", ["idle", "attack", "move"]),
       "enemy",
     ],
   }
