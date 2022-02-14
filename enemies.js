@@ -44,6 +44,7 @@ collides("enemy", "topright", (e) => {
 
 onCollide("eBullet", "player", (e) => {
   lifeNumber.value--;
+  lifeNumber.value += 0.5;
   lifeNumber.text = lifeNumber.value;
   destroy(e);
   cleanup();

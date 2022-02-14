@@ -128,7 +128,7 @@ addLevel(
 );
 
 scene("lose", () => {
-  add([text("You Lose"), pos(width() / 2, height() / 2)]);
+  add([text("GAME OVER"), pos(width() / 2, height() / 2)]);
   origin("center");
   // // Press any key to go back
   // onKeyPress(start)
