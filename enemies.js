@@ -1,21 +1,21 @@
 loadSprite("face", "./sprites/face.png");
 
-const enemy = add([
-  sprite("face"), // sprite() component makes it render as a sprite
-  pos(900, 40), // pos() component gives it position, also enables movement
-  area(),
-  solid(),
-  state("idle", ["idle", "attack", "move"]),
-  "enemy",
-]);
+// const enemy = add([
+//   sprite("face"), // sprite() component makes it render as a sprite
+//   pos(900, 40), // pos() component gives it position, also enables movement
+//   area(),
+//   solid(),
+//   state("idle", ["idle", "attack", "move"]),
+//   "enemy",
+// ]);
 
 const ENEMY_SPEED = 200;
 let CURRENT_SPEED = ENEMY_SPEED
 
 
-action("enemy",(s) => {
-  s.move (CURRENT_SPEED, 0)
-})
+// action("enemy",(s) => {
+//   s.move (CURRENT_SPEED, 0)
+// })
 
 
 // action("enemy", (e) => {
@@ -36,17 +36,17 @@ action("enemy",(s) => {
 //       s.move(-ENEMY_SPEED, 0);
 //     });
 
-onCollide("enemy", "topright", () => {
-  action("enemy", (s) => {
-    s.move(-ENEMY_SPEED, 0);
-  });
-});
+// onCollide("enemy", "topright", () => {
+//   action("enemy", (s) => {
+//     s.move(-ENEMY_SPEED, 0);
+//   });
+// });
 
-onCollide("enemy", "topleft", () => {
-  action("enemy", (s) => {
-    s.move(ENEMY_SPEED, 0);
-  });
-});
+// onCollide("enemy", "topleft", () => {
+//   action("enemy", (s) => {
+//     s.move(ENEMY_SPEED, 0);
+//   });
+// });
 
 const speed = 300;
 
