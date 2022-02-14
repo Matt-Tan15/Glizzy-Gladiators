@@ -9,12 +9,13 @@ const enemy = add([
   "enemy",
 ]);
 
+
 const ENEMY_SPEED = 200;
 let CURRENT_SPEED = ENEMY_SPEED;
 
-// action("enemy",(s) => {
-//   s.move (CURRENT_SPEED, 0)
-// })
+action("enemy",(s) => {
+  s.move (-CURRENT_SPEED, 0)
+})
 
 // action("enemy", (e) => {
 //   e = add([
@@ -39,11 +40,12 @@ let CURRENT_SPEED = ENEMY_SPEED;
 //   });
 // });
 
-// onCollide("enemy", "topleft", () => {
-//   action("enemy", (s) => {
-//     s.move(ENEMY_SPEED, 0);
-//   });
-// });
+onCollide("enemy", "topleft", (e) => {
+  // action("enemy", (s) => {
+  //   s.move(ENEMY_SPEED, 0);
+  // });
+  e.move(ENEMY_SPEED, 0);
+});
 
 const speed = 300;
 
