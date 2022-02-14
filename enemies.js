@@ -12,10 +12,20 @@ const enemy = add([
 
 const ENEMY_SPEED = 200;
 let CURRENT_SPEED = ENEMY_SPEED;
+const level_down = 100;
 
 action("enemy",(s) => {
-  s.move (-CURRENT_SPEED, 0)
-})
+  s.move (CURRENT_SPEED, 0)
+});
+
+collides("enemy", 'topleft', () => {
+  CURRENT_SPEED = ENEMY_SPEED;
+});
+
+collides("enemy", 'topright', () => {
+  CURRENT_SPEED = -ENEMY_SPEED;
+});
+
 
 // action("enemy", (e) => {
 //   e = add([
@@ -28,16 +38,6 @@ action("enemy",(s) => {
 //       color(BLUE),
 //       "eBullet",
 //   ])
-// });
-
-// action("enemy", (s) => {
-//       s.move(-ENEMY_SPEED, 0);
-//     });
-
-// onCollide("enemy", "topright", () => {
-//   action("enemy", (s) => {
-//     s.move(-ENEMY_SPEED, 0);
-//   });
 // });
 
 onCollide("enemy", "topleft", (e) => {
