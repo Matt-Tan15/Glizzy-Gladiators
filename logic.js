@@ -12,7 +12,7 @@ let bg1 = add([
   sprite("newRoad"),
   pos(width() / 2, height()),
   origin("center"),
-  scale(1.25),
+  scale(1.75),
   fixed(),
 ]);
 
@@ -20,24 +20,24 @@ let bg2 = add([
   sprite("newRoad"),
   pos(width() / 2, height() / 3),
   origin("center"),
-  scale(1.25),
+  scale(1.75),
   fixed(),
 ]);
 
 const block = add([
-  rect(0, height()),
+  rect(20, height()),
   area(),
-  pos(width() / 4.3, 0),
-  origin("topleft"),
+  pos(width() / 6.8, height() / 2),
+  origin("center"),
   solid(),
   "topleft",
 ]);
 
 const block2 = add([
-  rect(0, height()),
+  rect(20, height()),
   area(),
-  pos(bg2.width + 1450, 0),
-  origin("topright"),
+  pos(width() / 1.2, height() / 2),
+  origin("center"),
   solid(),
   "topright",
 ]);
