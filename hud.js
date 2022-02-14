@@ -2,7 +2,7 @@ const scoreHolder = add ([
     text('score:', {
         size:40
     }),
-    pos(width() * .93 ,20),
+    pos(width() * .95 ,20),
     origin("topright"),
     layer('ui'),
     
@@ -12,7 +12,7 @@ const score = add ([
     text('0', {
         size:40
     }),
-    pos(width() * .94 ,20),
+    pos(width() * .96 ,20),
     origin("topleft"),
     layer('ui'),
     {
