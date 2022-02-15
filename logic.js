@@ -7,11 +7,14 @@ loadSprite("hotdog", "./sprites/newCar.png");
 loadSprite("mush", "./sprites/betterMushroom.png");
 loadSprite("heart", "./sprites/output.png");
 loadSprite("newRoad", "./sprites/newRoad.png");
+loadSprite("gameOver", "./sprites/gameOver.png");
+loadSprite("youWin", "./sprites/youWin.png");
 loadSound("bruh", "./sounds/Bruh.mp3")
 loadSound("oof", "./sounds/uuhhh.mp3")
 loadSound("elevator", "./sounds/elevator.mp3")
 loadSound("aim", "./sounds/aim.mp3")
 loadSound("chug", "./sounds/chug.mp3")
+
 
 //load start scene
 scene("start", () => {
@@ -50,8 +53,8 @@ scene("start", () => {
       bg2.pos.y = START_POS;
     }
   });
-  add([text("Welcome\n\nPress to start\n\nLeft/Right to move\n\nSpace to Shoot"), pos(width() / 2, height() / 2), origin("center")]);
-  onKeyPress(() => go("game"));
+  add([text("Welcome!\n\nPress Enter To Start\n\nLeft/Right to move\n\nSpace to Shoot"), pos(width() / 2, height() / 2), origin("center")]);
+  onKeyPress("enter", () => go("game"));
 });
 
 // logic
@@ -326,8 +329,8 @@ scene("game", () => {
   const lifeNumber = add([
     text("3", {
       size: 45,
-    }), // sprite() component makes it render as a sprite
-    pos(width() / 7.3, 17), // pos() component gives it position, also enables movement
+    }),
+    pos(width() / 7.3, 17),
     layer("ui"),
     {
       value: 3,
@@ -337,21 +340,35 @@ scene("game", () => {
 
 //lose and win scenes
 scene("lose", () => {
-  add([text("GAME OVER \n Press Any Key To Play Again"), pos(width() / 2, height() / 2), origin("center")]);
+  add([
+    sprite("gameOver", {
+      width: width() * 0.675,
+    }),
+    pos(width() / 2, height() / 3),
+    origin("center"),
+    scale(1),
+    fixed(),
+  ]);
+  add([text("Press Enter To Play Again"), pos(width() / 2, height() / 1.3), origin("center")]);
   const aim = play('aim')
-  onKeyPress(() => go("game"));
-  onKeyPress(() => aim.pause());
-  // // Press any key to go back
-  // onKeyPress(start)
+  onKeyPress("enter", () => go("game"));
+  onKeyPress("enter", () => aim.pause());
 });
 
 scene("win", () => {
-  add([text("You Win \n Press Any Key To Play Again"), pos(width() / 2, height() / 2), origin("center")]);
+  add([
+    sprite("youWin", {
+      width: width() * 0.675,
+    }),
+    pos(width() / 2, height() / 3),
+    origin("center"),
+    scale(1),
+    fixed(),
+  ]);
+  add([text("Press Enter To Play Again"), pos(width() / 2, height() / 1.3), origin("center")]);
   const chugMusic = play('chug')
-  onKeyPress(() => go("game"));
-  onKeyPress(() => chugMusic.pause());
-  
-  // onKeyPress(start)
+  onKeyPress("enter", () => go("game"));
+  onKeyPress("enter", () => chugMusic.pause());
 });
  
 go("start");
