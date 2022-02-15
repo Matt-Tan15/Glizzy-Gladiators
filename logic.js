@@ -9,11 +9,11 @@ loadSprite("heart", "./sprites/output.png");
 loadSprite("newRoad", "./sprites/newRoad.png");
 loadSprite("gameOver", "./sprites/gameOver.png");
 loadSprite("youWin", "./sprites/youWin.png");
-loadSound("bruh", "./sounds/Bruh.mp3")
-loadSound("oof", "./sounds/uuhhh.mp3")
-loadSound("elevator", "./sounds/elevator.mp3")
-loadSound("aim", "./sounds/aim.mp3")
-loadSound("chug", "./sounds/chug.mp3")
+loadSound("bruh", "./sounds/Bruh.mp3");
+loadSound("oof", "./sounds/uuhhh.mp3");
+loadSound("elevator", "./sounds/elevator.mp3");
+loadSound("aim", "./sounds/aim.mp3");
+loadSound("chug", "./sounds/chug.mp3");
 
 
 //load start scene
