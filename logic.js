@@ -14,6 +14,9 @@ loadSound("oof", "./sounds/uuhhh.mp3");
 loadSound("elevator", "./sounds/elevator.mp3");
 loadSound("aim", "./sounds/aim.mp3");
 loadSound("chug", "./sounds/chug.mp3");
+loadSound("pop", "./sounds/pop.mp3");
+loadSound("victory", "./sounds/victory.mp3");
+
 
 
 //load start scene
@@ -61,7 +64,7 @@ scene("start", () => {
 scene("game", () => {
   const START_POS = -200;
   const END_POS = height();
-  volume(0.05);
+  volume(0.5);
   const music = play("elevator", {
     loop: true,
   })
@@ -223,7 +226,7 @@ scene("game", () => {
     destroy(e);
     addKaboom(e.pos.add(50));
     destroy(b);
-    play("bruh")
+    play("pop")
     shake(10);
     score.value++;
     score.text = score.value;
@@ -351,7 +354,7 @@ scene("lose", () => {
     fixed(),
   ]);
   add([text("Press Enter To Play Again"), pos(width() / 2, height() / 1.3), origin("center")]);
-  const aim = play('aim')
+  const aim = play('aim');
   onKeyPress("enter", () => go("game"));
   onKeyPress("enter", () => aim.pause());
 });
@@ -367,9 +370,9 @@ scene("win", () => {
     fixed(),
   ]);
   add([text("Press Enter To Play Again"), pos(width() / 2, height() / 1.3), origin("center")]);
-  const chugMusic = play('chug')
+  const winMusic = play('victory');
   onKeyPress("enter", () => go("game"));
-  onKeyPress("enter", () => chugMusic.pause());
+  onKeyPress("enter", () => winMusic.pause());
 });
  
 go("start");
