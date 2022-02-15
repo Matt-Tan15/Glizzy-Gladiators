@@ -19,7 +19,7 @@ collides("enemy", "topleft", () => {
       outline(4),
       cleanup(),
       origin("center"),
-      color(112, 59, 237),
+      color(225, 127, 0),
       "eBullet",
     ]);
   });
@@ -36,7 +36,7 @@ collides("enemy", "topright", (e) => {
       outline(4),
       cleanup(),
       origin("center"),
-      color(112, 59, 237),
+      color(225, 127, 0),
       "eBullet",
     ]);
   });
