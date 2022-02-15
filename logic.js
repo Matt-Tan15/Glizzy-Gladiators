@@ -109,7 +109,7 @@ addLevel(
     "         l                       ",
     "         l                       ",
     "         l    e         e         ",
-    "         l e       e        e     ",
+    "         l e       e      e       ",
     "         l    e         e         ",
     "         l                       ",
     "         l                       ",

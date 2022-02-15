@@ -2,7 +2,7 @@ loadSprite("mush", "./sprites/betterMushroom.png");
 
 const ENEMY_SPEED = 300;
 let CURRENT_SPEED = ENEMY_SPEED;
-const speed = 500;
+const speed = 300;
 
 action("enemy", (s) => {
   s.move(CURRENT_SPEED, 0);
