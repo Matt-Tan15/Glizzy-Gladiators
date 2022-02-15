@@ -61,6 +61,7 @@ scene("start", () => {
 scene("game", () => {
   const START_POS = -200;
   const END_POS = height();
+  volume(0.05);
   const music = play("elevator", {
     loop: true,
   })
