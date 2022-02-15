@@ -9,6 +9,10 @@ loadSprite("heart", "./sprites/output.png");
 loadSprite("newRoad", "./sprites/newRoad.png");
 loadSound("bruh", "./sounds/Bruh.mp3")
 loadSound("oof", "./sounds/uuhhh.mp3")
+loadSound("elevator", "./sounds/elevator.mp3")
+loadSound("aim", "./sounds/aim.mp3")
+loadSound("chug", "./sounds/chug.mp3")
+
 //load start scene
 scene("start", () => {
   const START_POS = -200;
@@ -54,6 +58,9 @@ scene("start", () => {
 scene("game", () => {
   const START_POS = -200;
   const END_POS = height();
+  const music = play("elevator", {
+    loop: true,
+  })
 
   let bg1 = add([
     sprite("newRoad", {
@@ -220,6 +227,7 @@ scene("game", () => {
     if (score.value === 7) {
       destroy("enemy");
       go("win");
+      music.pause()
     }
   });
 
@@ -281,6 +289,7 @@ scene("game", () => {
     if (lifeNumber.value === 0) {
       destroy(player);
       go("lose");
+      music.pause()
     }
   });
 
@@ -329,17 +338,20 @@ scene("game", () => {
 //lose and win scenes
 scene("lose", () => {
   add([text("GAME OVER"), pos(width() / 2, height() / 2), origin("center")]);
+  const aim = play('aim')
+  onKeyPress(() => go("game"));
+  onKeyPress(() => aim.pause());
   // // Press any key to go back
-  wait(3, () => {
-    go("start");
-  });
   // onKeyPress(start)
 });
 
 scene("win", () => {
   add([text("You Win"), pos(width() / 2, height() / 2), origin("center")]);
-
+  const chugMusic = play('chug')
+  onKeyPress(() => go("game"));
+  onKeyPress(() => chugMusic.pause());
+  
   // onKeyPress(start)
 });
-
+ 
 go("start");
