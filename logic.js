@@ -337,7 +337,7 @@ scene("game", () => {
 
 //lose and win scenes
 scene("lose", () => {
-  add([text("GAME OVER"), pos(width() / 2, height() / 2), origin("center")]);
+  add([text("GAME OVER \n Press Any Key To Play Again"), pos(width() / 2, height() / 2), origin("center")]);
   const aim = play('aim')
   onKeyPress(() => go("game"));
   onKeyPress(() => aim.pause());
@@ -346,7 +346,7 @@ scene("lose", () => {
 });
 
 scene("win", () => {
-  add([text("You Win"), pos(width() / 2, height() / 2), origin("center")]);
+  add([text("You Win \n Press Any Key To Play Again"), pos(width() / 2, height() / 2), origin("center")]);
   const chugMusic = play('chug')
   onKeyPress(() => go("game"));
   onKeyPress(() => chugMusic.pause());
