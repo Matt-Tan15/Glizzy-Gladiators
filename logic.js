@@ -118,8 +118,9 @@ addLevel(
     width: 40,
     height: 30,
     e: () => [
-      sprite("chomp"),
+      sprite("mush"),
       area(),
+      scale(1.7),
       solid(),
       "enemy",
     ],

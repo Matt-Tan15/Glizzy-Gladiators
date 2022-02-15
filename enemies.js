@@ -1,4 +1,4 @@
-loadSprite("chomp", "./sprites/chomp.png");
+loadSprite("mush", "./sprites/betterMushroom.png");
 
 const ENEMY_SPEED = 300;
 let CURRENT_SPEED = ENEMY_SPEED;
