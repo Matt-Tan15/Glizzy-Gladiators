@@ -7,7 +7,8 @@ loadSprite("hotdog", "./sprites/newCar.png");
 loadSprite("mush", "./sprites/betterMushroom.png");
 loadSprite("heart", "./sprites/output.png");
 loadSprite("newRoad", "./sprites/newRoad.png");
-
+loadSound("bruh", "./sounds/Bruh.mp3")
+loadSound("oof", "./sounds/uuhhh.mp3")
 //load start scene
 scene("start", () => {
   const START_POS = -200;
@@ -211,6 +212,7 @@ scene("game", () => {
     destroy(e);
     addKaboom(e.pos.add(50));
     destroy(b);
+    play("bruh")
     shake(10);
     score.value++;
     score.text = score.value;
@@ -271,6 +273,7 @@ scene("game", () => {
   });
 
   onCollide("eBullet", "player", (e) => {
+    play("oof")
     lifeNumber.value--;
     lifeNumber.text = lifeNumber.value;
     destroy(e);
