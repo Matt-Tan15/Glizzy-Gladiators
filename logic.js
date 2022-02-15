@@ -28,7 +28,7 @@ loadSprite("newRoad", "./sprites/newRoad.png");
 //load start scene
 scene("start", () => {
   add([text("Welcome"), pos(width() / 2, height() / 2), origin("center")]);
-  onKeyPress(() => go("game"))
+  onKeyPress(() => go("game"));
 });
 
 // logic
@@ -208,9 +208,9 @@ scene("game", () => {
     [
       "         l                       ",
       "         l                       ",
-      "         l    e         e         ",
-      "         l e       e      e       ",
-      "         l    e         e         ",
+      "         l    e        e         ",
+      "         l e       e       e     ",
+      "         l    e        e         ",
       "         l                       ",
       "         l                       ",
     ],
@@ -222,46 +222,35 @@ scene("game", () => {
   );
 
   // //enemies
-  const ENEMY_SPEED = 300;
-  let CURRENT_SPEED = ENEMY_SPEED;
+  let ENEMY_SPEED = 300;
   const speed = 300;
 
   action("enemy", (s) => {
-    s.move(CURRENT_SPEED, 0);
+    s.move(ENEMY_SPEED, 0);
+  });
+
+  loop(3, () => {
+    every("enemy", (e) => {
+      add([
+        pos(e.pos.add(50, 80)),
+        move(DOWN, speed),
+        rect(12, 48),
+        area(),
+        outline(4),
+        cleanup(),
+        origin("center"),
+        color(225, 127, 0),
+        "eBullet",
+      ]);
+    });
   });
 
   collides("enemy", "topleft", () => {
-    CURRENT_SPEED = ENEMY_SPEED;
-    every("enemy", (e) => {
-      add([
-        pos(e.pos.add(50, 80)),
-        move(DOWN, speed),
-        rect(12, 48),
-        area(),
-        outline(4),
-        cleanup(),
-        origin("center"),
-        color(225, 127, 0),
-        "eBullet",
-      ]);
-    });
+    ENEMY_SPEED = 300;
   });
 
-  collides("enemy", "topright", (e) => {
-    CURRENT_SPEED = -ENEMY_SPEED;
-    every("enemy", (e) => {
-      add([
-        pos(e.pos.add(50, 80)),
-        move(DOWN, speed),
-        rect(12, 48),
-        area(),
-        outline(4),
-        cleanup(),
-        origin("center"),
-        color(225, 127, 0),
-        "eBullet",
-      ]);
-    });
+  collides("enemy", "topright", () => {
+    ENEMY_SPEED = -300;
   });
 
   onCollide("eBullet", "player", (e) => {
