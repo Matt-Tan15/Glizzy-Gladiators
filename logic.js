@@ -8,26 +8,44 @@ loadSprite("mush", "./sprites/betterMushroom.png");
 loadSprite("heart", "./sprites/output.png");
 loadSprite("newRoad", "./sprites/newRoad.png");
 
-// addLevel(
-//   [
-//     "         l                       ",
-//     "         l                       ",
-//     "         l    e         e         ",
-//     "         l e       e      e       ",
-//     "         l    e         e         ",
-//     "         l                       ",
-//     "         l                       ",
-//   ],
-//   {
-//     width: 40,
-//     height: 30,
-//     e: () => [sprite("mush"), area(), scale(1.7), solid(), "enemy"],
-//   }
-// );
-
 //load start scene
 scene("start", () => {
-  add([text("Welcome"), pos(width() / 2, height() / 2), origin("center")]);
+  const START_POS = -200;
+  const END_POS = height();
+  let bg1 = add([
+    sprite("newRoad", {
+      width: width() * 0.675,
+    }),
+    pos(width() / 2, height()),
+    origin("center"),
+    scale(1),
+    fixed(),
+  ]);
+
+  let bg2 = add([
+    sprite("newRoad", {
+      width: width() * 0.675,
+    }),
+    pos(width() / 2, height() / 3),
+    origin("center"),
+    scale(1),
+    fixed(),
+  ]);
+
+  bg1.onUpdate(() => {
+    bg1.move(0, 4000);
+    if (bg1.pos.y > END_POS) {
+      bg1.pos.y = START_POS;
+    }
+  });
+
+  bg2.onUpdate(() => {
+    bg2.move(0, 4000);
+    if (bg2.pos.y > END_POS) {
+      bg2.pos.y = START_POS;
+    }
+  });
+  add([text("Welcome\n\nPress to start\n\nLeft/Right to move\n\nSpace to Shoot"), pos(width() / 2, height() / 2), origin("center")]);
   onKeyPress(() => go("game"));
 });
 
@@ -35,7 +53,6 @@ scene("start", () => {
 scene("game", () => {
   const START_POS = -200;
   const END_POS = height();
-  const BGSPEED = 500;
 
   let bg1 = add([
     sprite("newRoad", {
@@ -255,7 +272,6 @@ scene("game", () => {
 
   onCollide("eBullet", "player", (e) => {
     lifeNumber.value--;
-    lifeNumber.value += 0.5;
     lifeNumber.text = lifeNumber.value;
     destroy(e);
     cleanup();
@@ -311,6 +327,9 @@ scene("game", () => {
 scene("lose", () => {
   add([text("GAME OVER"), pos(width() / 2, height() / 2), origin("center")]);
   // // Press any key to go back
+  wait(3, () => {
+    go("start");
+  });
   // onKeyPress(start)
 });
 
