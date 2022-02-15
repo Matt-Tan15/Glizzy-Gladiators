@@ -316,14 +316,6 @@ scene("game", () => {
       value: 3,
     },
   ]);
-
-  const life = add([
-    sprite("heart"), // sprite() component makes it render as a sprite
-    pos(width() / 9.0, 20), // pos() component gives it position, also enables movement
-    area(),
-    solid(),
-    "heart",
-  ]);
 });
 
 //lose and win scenes
